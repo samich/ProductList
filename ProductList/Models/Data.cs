@@ -2,9 +2,9 @@
 {
     public class Data
     {
-        public List<Product> GetProducts()
+        public static List<Product> GetProducts()
         {
-            List<Product> products = new List<Product>
+            List<Product> products = new()
             {
 
                 new Product { 
@@ -111,6 +111,23 @@
             };
 
             return products;
+        }
+
+        public static Product? GetProduct(string slug)
+        {
+
+            List<Product> productList = Data.GetProducts();
+
+            foreach (Product product in productList)
+            {
+                if (product.Slug == slug) 
+                {
+                    return product;
+                }            
+            }
+
+            return null;
+        
         }
     }
 }
