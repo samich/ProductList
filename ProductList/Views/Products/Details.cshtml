@@ -1,0 +1,22 @@
+﻿@model ProductList.Models.Product
+
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<h1 class="my-4">@ViewBag.Title</h1>
+<table class="table table-bordered table-striped">
+    <tr>
+        <td class="col-4">Product ID</td>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td class="col-4">Product Name</td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td class="col-4">Price</td>
+        <td>@($"{Model.Price:C}")</td>
+    </tr>
+</table>
+

@@ -3,9 +3,9 @@
 
     <thead>
         <tr>
-            <th>ID</th>
             <th>Product Name</th>
             <th>Price</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -13,9 +13,9 @@
         @foreach(Product product in @Model)
         {
             <tr>
-                <td>@product.Id</td>
                 <td>@product.Name</td>
-                <td>@product.Price</td>
+                <td>@($"{product.Price:C}")</td>
+                <td><a asp-controller="Products" asp-action="Details" asp-route-slug="@product.Slug">View Details</a></td>
             </tr>
         }
         

@@ -12,5 +12,13 @@ namespace ProductList.Controllers
 
             return View(productList);
         }
+
+        public IActionResult Details(string slug)
+        {
+
+            Product? product = Data.GetProduct(slug);
+
+            return View(product);
+        }
     }
 }
